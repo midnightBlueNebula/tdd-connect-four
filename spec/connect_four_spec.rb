@@ -9,9 +9,9 @@ RSpec.describe ConnectFour do
         it "should place a color without breaking rules." do
             row = game.board[-1]
             if row.all? { |r| r == " " }
-                expect(game.place_color("b",3)).to eql(game.board[-1][3] == "b")
+                expect(game.place_color("b",3)).to eql(game.board[-1][3])
             elsif row[-1][3] != " " && row[-2][3] == " "
-                expect(game.place_color("b",3)).to eql(game.board[-2][3] == "b")
+                expect(game.place_color("b",3)).to eql(game.board[-2][3])
             end
         end
     end
